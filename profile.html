@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="fb.png"/>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0\css\font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css\style.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="script/profile.min.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo">Graph API</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li class="active"><a class="profileLink">Profile</a>
+                </li>
+                <li><a class="feedLink">Feed</a>
+                </li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="index.html">Home</a>
+                </li>
+                <li class="active"><a class="profileLink">Profile</a>
+                </li>
+                <li><a class="feedLink">Feed</a>
+                </li>
+            </ul>
+        </div>
+    </nav><!--end nav bar-->
+    <div align="center" class="container padding">
+        <div class="loader preloader-wrapper big active">
+            <div class="spinner-layer spinner-red-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end loader container-->
+
+    <!--image container-->
+    <div class="container" id="imageContainer" align="center">
+        <img class="materialboxed responsive-img" id="coverPic">
+        <div class="profilePicContainer">
+            <img class="materialboxed responsive-img profilePic hide-on-small-only">
+            <img class="materialboxed responsive-img circle profilePic hide-on-med-and-up">
+        </div>
+    </div><!--end iamge container-->
+    <br>
+    <br>
+    <br>
+    <br>
+    <h3 class="name" id="coverName" align="center"></h3>
+    <div class="divider"></div>
+
+    <div class="container">
+        <div class="row card-panel">
+            <!-- column 1 (for large devices)-->
+            <div class="col hide-on-med-and-down m3">
+                <ul class="table-of-contents">
+                    <li><a href="#overviewData" class="collection-item active" id="overview">Overview</a>
+                    </li>
+                    <li><a href="#educationData" class="collection-item" id="education">Education</a>
+                    </li>
+                    <li><a href="#basicInfoData" class="collection-item" id="basicInfo">Basic Info</a>
+                    </li>
+                    <li><a href="#relationshipData" class="collection-item" id="relationship">Relationship</a>
+                    </li>
+                </ul>
+            </div><!-- end column 1(for large devices)-->
+            <!-- column 1(for mediumm devices)-->
+            <div class="col s12 hide-on-large-only hide-on-small-only">
+                <ul class="tabs">
+                    <li class="tab col s3"><a class="active" href="#overviewData">Overview</a>
+                    </li>
+                    <li class="tab col s3"><a href="#educationData">Education</a>
+                    </li>
+                    <li class="tab col s3"><a href="#basicInfoData">Basic Info</a>
+                    </li>
+                    <li class="tab col s3"><a href="#relationshipData">Relationship</a>
+                    </li>
+                </ul>
+            </div><!-- end column 1(for medium devices)-->
+            <!-- column 1(for small devices)-->
+            <div>
+                <ul class="collapsible hide-on-med-and-up data" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header active flow-text">
+                            <blockquote>Overview</blockquote>
+                        </div>
+                        <div class="collapsible-body">
+                            <div class="section name">Name </div>
+                            <div class="section email"></div>
+                            <div class="section age"></div>
+                            <div class="section hometown"></div>
+                            <div class="section profileID"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header flow-text">
+                            <blockquote>Education</blockquote>
+                        </div>
+                        <div class="collapsible-body">
+                            <div class="section college">
+                            </div>
+                            <div class="divider"></div>
+                            <div class="section highSchool">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header flow-text">
+                            <blockquote>Basic info</blockquote>
+                        </div>
+                        <div class="collapsible-body">
+                            <div class="col l4">
+                                <div class="section"><b>Date of birth</b>
+                                </div>
+                                <div class="section"><b>Gender</b>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="section dob"></div>
+                                <div class="section gender"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header flow-text">
+                            <blockquote>Relationship</blockquote>
+                        </div>
+                        <div class="collapsible-body">
+                            <div class="section relationshipStatus">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- end column 1(for small devices)-->
+
+            <!-- column 2-->
+            <div class="col s9 data">
+                <!--column 2 row overview-->
+                <div class="row hide-on-small-only" id="overviewData">
+                    <div class="section">
+                        <blockquote>
+                            <p class="flow-text">Overview</p>
+                        </blockquote>
+                        <hr>
+                    </div>
+                    <div class="col l7">
+                        <div class="section"><b>Name</b>&ensp;<span class="name"></span> </div>
+                        <div class="section age"></div>
+                        <div class="section profileID"></div>
+                    </div>
+                    <div class="col l5">
+                        <div class="section hometown"></div>
+                        <div class="section email"></div>
+                        <div class="section bDay"></div>
+                    </div>
+                </div><!--end column 2 row overview-->
+                <!--column 2 row education-->
+                <div class="row hide-on-small-only" id="educationData"> 
+                    <div class="section">
+                        <blockquote>
+                            <p class="flow-text">Education</p>
+                        </blockquote>
+                        <hr>
+                    </div>
+                    <div class="section college">
+                    </div>
+                    <div class="divider"></div>
+                    <div class="section highSchool">
+                    </div>
+                </div><!--end column 2 row education-->
+                <!--column 2 row basicInfo-->
+                <div class="row hide-on-small-only" id="basicInfoData">
+                    <div class="section">
+                        <blockquote>
+                            <p class="flow-text">Basic Information</p>
+                        </blockquote>
+                        <hr>
+                    </div>
+                    <div class="col l4">
+                        <div class="section"><b>Date of birth</b>
+                        </div>
+                        <div class="section"><b>Gender</b>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="section dob"></div>
+                        <div class="section gender"></div>
+                    </div>
+                </div><!--end column 2 row basicInfo-->
+                <!--column 2 relationship-->
+                <div class="row hide-on-small-only" id="relationshipData">
+                    <div class="section">
+                        <blockquote>
+                            <p class="flow-text">Relationship</p>
+                        </blockquote>
+                        <hr>
+                    </div>
+                    <div class="section relationshipStatus">
+                    </div>
+                </div><!--end column 2 relationship-->
+            </div><!-- end column 2-->
+        </div><!-- end row-->
+    </div><!-- end container-->
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Facebook Graph API Explorer</h5>
+                    <p class="grey-text text-lighten-4">Test, create, and authenticate API calls and debug responses.<a href="https://developers.facebook.com/tools/explorer">Open website</a>
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Connect</h5>
+                    <ul id="connect">
+                        <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/nitinshokeen9" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/nitin095" target="_blank"><i class="fa fa-github-alt fa-2x" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a class="grey-text text-lighten-3" href="https://plus.google.com/u/0/104032080224503849383" target="_blank"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                    <p><a class="grey-text text-lighten-3"><i class="fa fa-envelope-o" aria-hidden="true"></i>&ensp;nitinshokeen9@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container" style="text-align: center;">
+                © 2017 Nitin Shokeen
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

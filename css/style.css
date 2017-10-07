@@ -1,0 +1,48 @@
+body {
+    background-color: #eeeeee;
+}
+.menu {
+    padding: 5%;
+    text-align: center;
+}
+.button {
+    border: 2px solid black !important;
+    color: #000 !important;
+    background-color: transparent !important;
+}
+.button:hover {
+    background-color: rgb(38,166,154) !important;
+    color: #fff !important;
+}
+#token {
+    width: 100%;
+}
+#imageContainer {
+    position: relative;
+    margin-bottom: auto;
+}
+#coverPic {
+    width: 849px;
+    height: 313px;
+    object-fit: cover;
+}
+.profilePicContainer {
+    min-width: 100%;
+    position: absolute;
+    bottom: -30%;
+}
+.profilePic {
+    border: 4px solid white;
+}
+.padding {
+    padding: 20%;
+}
+ul#connect li {
+    display: inline;
+    padding: 8px;
+}
+ul#connect li:hover,
+ul#connect li:focus,
+ul#connect li:active {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
