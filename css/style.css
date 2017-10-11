@@ -46,3 +46,6 @@ ul#connect li:focus,
 ul#connect li:active {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
+.postImages {
+    max-height: 400px !important;
+}
