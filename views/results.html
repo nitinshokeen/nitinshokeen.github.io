@@ -1,0 +1,21 @@
+<div>
+		<h3>{{matchData.matches.name}}</h3>
+		<table class="table table-striped">
+			 <thead>
+    <tr>
+      <th scope="col">Round</th>
+      <th scope="col"><a ng-click="matchData.sortItems('-matches[0].date')">Date</a><span class="sortorder" ng-show="matchData.sortBy === 'matches[0].date' || matchData.sortBy === '-matches[0].date'" ng-class="{reverse: matchData.reverse}"></span></th>
+      <th scope="col">Teams</th>
+      <th scope="col">Score</th>
+    </tr>
+  </thead>
+   <tbody>
+		<tr ng-repeat="match in matchData.matches.rounds | orderBy:matchData.sortBy:reverse">
+			<th scope="row">{{match.name}}</th>
+			<td>{{match.matches[0].date}}</td>
+			<td>{{match.matches[0].team1.name}} vs {{match.matches[0].team2.name}}</td>
+			<td>{{match.matches[0].score1}} - {{match.matches[0].score2}}</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
