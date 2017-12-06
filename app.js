@@ -43,7 +43,7 @@ app.controller('mainController',['$http',function($http){
 app.config(function($routeProvider) {
   $routeProvider
   .when("/", {
-    templateUrl : "angular/results.html"
+    templateUrl : "views/results.html"
   })
   .when("/red", {
     templateUrl : "red.htm"
