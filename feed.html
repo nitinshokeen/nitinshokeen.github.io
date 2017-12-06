@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Feed</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="fb.png"/>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0\css\font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css\style.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="script/feed.min.js"></script>
+
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo">Graph API</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a class="profileLink">Profile</a>
+                </li>
+                <li class="active"><a class="feedLink">Feed</a>
+                </li>
+            </ul>
+            <!-- collapsible nav for mobile-->
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="index.html">Home</a>
+                </li>
+                <li><a class="profileLink">Profile</a>
+                </li>
+                <li class="active"><a class="feedLink">Feed</a>
+                </li>
+            </ul><!--end collapsible nav for mobile-->
+        </div>
+    </nav><!--end nav bar-->
+
+    <!--loader container-->
+    <div align="center" class="container padding">
+        <div class="loader preloader-wrapper big active">
+            <div class="spinner-layer spinner-red-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end loader container-->
+
+    <!--posts conatiner-->
+    <div class="container postsContainer">
+    </div>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Facebook Graph API Explorer</h5>
+                    <p class="grey-text text-lighten-4">Test, create, and authenticate API calls and debug responses.<a href="https://developers.facebook.com/tools/explorer" target="_blank">Open website</a>
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Connect</h5>
+                    <ul id="connect">
+                        <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/nitinshokeen9" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/nitin095" target="_blank"><i class="fa fa-github-alt fa-2x" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a class="grey-text text-lighten-3" href="https://plus.google.com/u/0/104032080224503849383" target="_blank"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                    <p><a class="grey-text text-lighten-3"><i class="fa fa-envelope-o" aria-hidden="true"></i>&ensp;nitinshokeen9@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container" style="text-align: center;">
+                © 2017 Nitin Shokeen
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
