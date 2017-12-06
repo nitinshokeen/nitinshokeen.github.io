@@ -1,52 +1,81 @@
 <!DOCTYPE html>
-<html ng-app="englishPremierLeague">
+<html>
+
 <head>
-	<title>Angular</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	
+    <title>Facebook API</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="fb.png"/>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0\css\font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css\style.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="script/script.min.js"></script>
 </head>
+
 <body>
-	
-	<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-3"><img src="images\cover.png" class="cover"></h1>
-    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-  </div>
-</div>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Graph API</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+            </ul>
+        </div>
+    </nav>
 
-    <!-- Main Content -->
     <div class="container">
-
-       <div ng-view>
-           
-           
-       </div> 
-
+        <div class="row menu">
+            <div class="col s12">
+                <p class="flow-text">Facebook Graph API</p>
+                <a class="waves-effect waves-light btn button" href="https://developers.facebook.com/tools/explorer" target="_blank">Get Facebook Token</a>
+            </div>
+            <div class="col s12">
+                <div class="section"></div>
+                <div class="section"></div>
+                Already have it? Enter it below
+            </div>
+            <div class="col s12">
+                <input type="text" id="token">
+            </div>
+            <div class="col s12">
+                <a class="waves-effect waves-light btn button" id="submitButton">Submit</a>
+            </div>
+        </div>
     </div>
 
-	
-
-<!-- Footer -->
-    <footer>
+    <footer class="page-footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p class="copyright text-muted">Copyright &copy; Nitin Shokeen 2017</p>
+                <div class="col l6 s12">
+                    <h5 class="white-text">Facebook Graph API Explorer</h5>
+                    <p class="grey-text text-lighten-4">Test, create, and authenticate API calls and debug responses.<a href="https://developers.facebook.com/docs/graph-api" target="_blank">Open website</a>
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Connect</h5>
+                    <ul id="connect">
+                        <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/nitinshokeen9" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/nitin095" target="_blank"><i class="fa fa-github-alt fa-2x" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a class="grey-text text-lighten-3" href="https://plus.google.com/u/0/104032080224503849383" target="_blank"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                    <p><a class="grey-text text-lighten-3"><i class="fa fa-envelope-o" aria-hidden="true"></i>&ensp;nitinshokeen9@gmail.com</a>
+                    </p>
                 </div>
             </div>
         </div>
+        <div class="footer-copyright">
+            <div class="container" style="text-align: center;">
+                © 2017 Nitin Shokeen
+            </div>
+        </div>
     </footer>
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>	
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
-   
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="app.js"></script>
-	<!--<script type="text/javascript" src="angular/routes.js"></script>-->
 </body>
+
 </html>
