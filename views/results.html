@@ -1,21 +1,60 @@
-<div>
-		<h3>{{matchData.matches.name}}</h3>
-		<table class="table table-striped">
-			 <thead>
-    <tr>
-      <th scope="col">Round</th>
-      <th scope="col"><a ng-click="matchData.sortItems('-matches[0].date')">Date</a><span class="sortorder" ng-show="matchData.sortBy === 'matches[0].date' || matchData.sortBy === '-matches[0].date'" ng-class="{reverse: matchData.reverse}"></span></th>
-      <th scope="col">Teams</th>
-      <th scope="col">Score</th>
-    </tr>
-  </thead>
-   <tbody>
-		<tr ng-repeat="match in matchData.matches.rounds | orderBy:matchData.sortBy:reverse">
-			<th scope="row">{{match.name}}</th>
-			<td>{{match.matches[0].date}}</td>
-			<td>{{match.matches[0].team1.name}} vs {{match.matches[0].team2.name}}</td>
-			<td>{{match.matches[0].score1}} - {{match.matches[0].score2}}</td>
-		</tr>
-	</tbody>
-		</table>
-	</div>
+<p id="/" class="viewHeading">Results</p>
+<!--Filters-->
+<div class="container filterContainer">
+   <div class="row">
+      <div class="col-4 col-sm-4 col-md-3 col-lg-2"><small>Filter by club</small></div>
+      <div class="col-4 col-sm-4 col-md-3 col-lg-2"><small>Filter by score</small></div>
+      <div class="col-4 col-sm-4 col-md-3 col-lg-2"><small>Filter by season</small></div>
+      <div class="col-4 col-sm-4 col-md-3 col-lg-2"><small>Filter by date</small></div>
+   </div>
+   <div class="row filtersRow">
+      <div class="col-4 col-sm-4 col-md-3 col-lg-2">
+         <select ng-model="club" ng-options="names for names in ['Arsenal','Aston Villa','Bournemouth','Burnley','Chelsea','Crystal Palace','Everton','Hull City','Leicester City','Liverpool','Manchester City','Manchester United','Middlesbrough','Newcastle United','Norwich','Southampton','Stoke City','Sunderland','Swansea','Tottenham Hotspur','Watford','West Bromwich Albion','West Ham United']">
+         </select>
+      </div>
+      <div class="col-4 col-sm-4 col-md-3 col-lg-2">
+         <select ng-model="getScore" ng-options="score for score in [0,1,2,3,4,5,6,7]">
+         </select>
+      </div>
+      <div class="col-4 col-sm-4 col-md-3 col-lg-2">
+         <select ng-model="getSeason">
+            <option ng-selected="2016/17">2016/17</option>
+            <option>2015/16</option>
+         </select>
+      </div>
+      <div class="col-4 col-sm-4 col-md-3 col-lg-2">
+         
+      </div>
+   </div>
+</div><!--end filters-->
+<div class="container" ng-repeat="season in matchData.matches | orderBy:'-' | filter:getSeason">
+   <ul class="list-group" ng-repeat="round in season.rounds | orderBy:'+':true">
+      <li>
+        <!--match div-->
+         <div ng-repeat="match in round.matches | orderBy:'-date' | filter:club | filter:matchData.scoreFilter(getScore)">
+            <div class="date">{{matchData.dateChecker(match.date) | date : "EEEE d MMMM yyyy"}}</div>
+            <a href="#/match/{{round.name}}/{{match.date}}/{{match.team1.name}}/{{match.team2.name}}/{{match.score1}}/{{match.score2}}">
+               <div class="row scoreRow">
+                  <div class="col-4 col-sm-4 col-md-3 col-lg-3 team1">{{match.team1.name}} <img ng-src="images\{{match.team1.name}}.png" class="img-fluid teamLogo"></div>
+                  <div class="col-2 col-sm-2 col-md-2 col-lg-1 scoreCol"><span class="score">{{match.score1}} - {{match.score2}}</span></div>
+                  <div class="col-4 col-sm-4 col-md-3 col-lg-3 team2"><img ng-src="images\{{match.team2.name}}.png" class="img-fluid teamLogo"> {{match.team2.name}}</div>
+                  <div class="col-sm-1 d-none d-sm-block d-md-none">
+                     <i class="material-icons">&#xE315;</i>
+                  </div>
+                  <div class="d-none d-sm-block col-sm-12 col-md-3 col-lg-4">
+                     <div class="float-sm-right float-md-left">
+                        <span ng-if="match.score1 > match.score2"> <img class="teamLogoSmall" ng-src="images\{{match.team1.name}}.png" alt=""><small> {{match.team1.name}} won by {{match.score1-match.score2}} goals</small></span> 
+                        <span ng-if="match.score1 < match.score2"> <img class="teamLogoSmall" ng-src="images\{{match.team2.name}}.png" alt=""><small> {{match.team2.name}} won by {{match.score2-match.score1}} goals</small></span> 
+                        <span ng-if="match.score1 == match.score2"><small>TIE</small></span>
+                     </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-lg-1 d-sm-none d-md-block">
+                     <i class="material-icons">&#xE315;</i>
+                  </div>
+               </div>
+            </a><!--end row link-->
+            <hr>
+         </div><!--end match div-->
+      </li><!--end list element-->
+   </ul><!--end list-->
+</div><!--end container-->

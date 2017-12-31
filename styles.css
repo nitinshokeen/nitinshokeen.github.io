@@ -1,10 +1,230 @@
-.sortorder:after {
-  content: '\25b2';   // BLACK UP-POINTING TRIANGLE
-}
-.sortorder.reverse:after {
-  content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
-}
 .cover {
-	width: 50%;
-	height: 50%;
+     width: 100%;
+     height: auto;
+}
+ .jumbotron {
+ 	padding-top: 2%;
+     padding-bottom: 0;
+     margin-bottom: 0;
+     background-color: rgba(233,236,239,0.7);
+}
+.img{
+	margin: 0px;
+	padding: 0px;
+}
+ .main-container {
+     background-color: rgba(255,255,255, 1);
+     box-shadow: 0px 19px 115px -7px rgba(0, 0, 0, 0.41);
+     padding-right: 0;
+     padding-left: 0;
+}
+ .navbar {
+ 	margin-top: 0;
+    opacity: 0.9;	
+    padding-top: 0;
+    margin-bottom: 5%;
+
+}
+ body {
+     background: rgb(146, 168, 209);
+    /* Old browsers */
+     background: -moz-linear-gradient(-45deg, rgba(146, 168, 209, 1) 0%, rgba(247, 202, 201, 1) 100%);
+    /* FF3.6-15 */
+     background: -webkit-linear-gradient(-45deg, rgba(146, 168, 209, 1) 0%, rgba(247, 202, 201, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+     background: linear-gradient(135deg, rgba(146, 168, 209, 1) 0%, rgba(247, 202, 201, 1) 100%);
+}
+ .viewHeading {
+     padding-top: 3%;
+     padding-left: 3%;
+     padding-bottom: 1%;
+     background-color: rgb(56,0,60);
+     color: white;
+     font-size: 5vmin;
+     font-weight: 500;
+}
+ .score {
+     color: white;
+     background-color: #38003c;
+     padding-left: 12px;
+     padding-right: 12px;
+     padding-top: 2px;
+     padding-bottom: 2px;
+}
+ .team1 {
+     padding: 0px;
+     font-weight: bold;
+     font-size: 2.7vmin;
+     text-align: right;
+}
+ .team2 {
+     padding: 0px;
+     font-weight: bold;
+     font-size: 2.7vmin;
+     text-align: left;
+}
+ .scoreCol {
+     padding: 0px;
+     font-size: 2.7vmin;
+     text-align: center;
+}
+ .scoreRow {
+     margin-bottom: 7px;
+}
+ .scoreRow:hover {
+     background-color: #ff005a;
+     color: white;
+}
+ .date {
+ 	font-size: 2.8vmin;
+     font-weight: bold;
+     margin-left: 5%;
+     padding: 2%;
+}
+ .date:empty {
+     display:none;
+}
+ a:link {
+     text-decoration: none;
+     color: #000;
+}
+ a:visited {
+     text-decoration: none;
+     color: #000;
+}
+ a:hover {
+     text-decoration: none;
+     color: #000;
+}
+ a:active {
+     text-decoration: none;
+     color: #000;
+}
+ ul {
+     list-style-type: none;
+}
+ select {
+     border-top: 0px;
+     border-left: 0px;
+     border-right: 0px;
+     border-bottom: solid #ff005a 2px;
+     width: 100%;
+}
+ option:checked {
+     background-color: #ff005a;
+     color: #fff;
+}
+ hr {
+     padding: 0;
+     margin: 0;
+}
+ .filterContainer{
+     position: relative;
+     margin: auto;
+     height: 50px;
+     margin-bottom: 40px;
+}
+ .filtersRow {
+     min-width: 100%;
+     position: absolute;
+     top: 40%;
+}
+ .teamLogo {
+     height: 4vmin;
+     width: 4vmin;
+}
+ .teamLogoSmall {
+     height: 3vmin;
+     width: 3vmin;
+}
+ .teamLogoMain {
+     width: 50%;
+     height: auto;
+     -webkit-transition: 0.2s ease;
+     transition: 0.2s ease;
+}
+ .teamLogoMain:hover {
+     -webkit-transform: scale(1.2);
+     transform: scale(1.2);
+}
+ .imageRow {
+     position: relative;
+     margin-bottom: auto;
+     min-height: 15vmin;
+}
+ .team1Logo,.team2Logo {
+     height: auto;
+     max-width: 15%;
+}
+ .team2Logo {
+     float: right;
+}
+ .imageContainer {
+     min-width: 100%;
+     position: absolute;
+     bottom: -30%;
+}
+.mobile-image1,.mobile-image2{
+	max-width: 15%;
+	height: auto;
+	margin-left: 10%;
+	margin-top: 5%;
+}
+.mobile-image2 {
+	float: right;
+	margin-right: 10%;
+}
+ .heading{
+     font-size: 5vmin;
+     font-weight: bold;
+}
+ .arrow {
+     font-weight: 1000;
+}
+ .matchScoreRow {
+     background-color: #38003c;
+     font-size: 3.5vmin;
+     font-weight: bold;
+     -webkit-box-shadow: 0px -54px 157px 30px rgba(61,25,91,0.48);
+     -moz-box-shadow: 0px -54px 157px 30px rgba(61,25,91,0.48);
+     box-shadow: 0px -54px 157px 30px rgba(61,25,91,0.48);
+}
+ .matchViewScore {
+     background-color: #ff005a;
+     font-weight: 700;
+     font-size: 7vmin;
+     text-align: center;
+}
+ .teamName {
+     margin: auto;
+     text-align: center;
+}
+ .matchHeaderContainer {
+     padding-top: 30px;
+     padding-bottom: 35px;
+}
+ .matchHeader {
+     color: #fff;
+     background-color: rgba(56,0,60,0.85);
+     padding: 5px;
+     padding-left: 20px;
+     padding-right: 20px;
+     font-size: 3vmin;
+}
+ .matchViewResult {
+     text-align: center;
+     font-size: 5vmin;
+     font-weight: 600;
+     padding: 10px;
+     padding-bottom: 5px;
+     border-bottom: 2px solid #ff005a;
+     margin-left: 10%;
+     margin-right: 10%;
+}
+ .footer {
+     padding-top: 5%;
+}
+ footer {
+     margin-bottom: 1%;
+     text-align: center;
 }

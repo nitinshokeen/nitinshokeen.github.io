@@ -1,0 +1,28 @@
+<p class="viewHeading">Match Summary</p>
+<div class="container">
+   <div class="matchHeaderContainer">	
+      <span class="matchHeader">{{matchView.date | date : "EEEE d MMMM yyyy"}} &nbsp; &nbsp; {{matchView.round}}</span>
+   </div><!--end matchHeaderContainer-->
+   <div class="matchViewResult">
+      <span ng-if="matchView.score1 > matchView.score2"> <img class="teamLogo" ng-src="images\{{matchView.team1}}.png" alt="">{{matchView.team1}} won by {{matchView.score1-matchView.score2}} goals</span> 
+      <span ng-if="matchView.score1 < matchView.score2"> <img class="teamLogo" ng-src="images\{{matchView.team2}}.png" alt=""> {{matchView.team2}} won by {{matchView.score2-matchView.score1}} goals</span> 
+      <span ng-if="matchView.score1 == matchView.score2">TIE</span>
+   </div><!--end matchViewResult-->
+   <!--match score div-->
+   <div>
+      <div class="row imageRow d-none d-md-block">
+         <div class="col-sm-5 col-lg-5 imageContainer"><img class="team1Logo img-fluid" ng-src="images\{{matchView.team1}}.png" alt=""></div>
+         <div class="col-sm-2 col-lg-5 "></div>
+         <div class="col-sm-5 col-lg-5 imageContainer"><img class="team2Logo img-fluid" ng-src="images\{{matchView.team2}}.png" alt=""></div>
+      </div>
+      <div class="row d-block d-md-none">
+        <img class="mobile-image1" ng-src="images\{{matchView.team1}}.png">
+        <img class="mobile-image2" ng-src="images\{{matchView.team2}}.png">
+      </div>
+      <div class="row text-white matchScoreRow">
+         <div class="col-4 col-sm-4 col-md-4 col-lg-5 teamName">{{matchView.team1}}</div>
+         <div class="col-4 col-sm-4 col-md-3 col-lg-2 matchViewScore">{{matchView.score1}} - {{matchView.score2}}</div>
+         <div class="col-4 col-sm-4 col-md-4 col-lg-5 teamName">{{matchView.team2}}</div>
+      </div>
+   </div><!--end match score div-->
+</div><!--end Container-->

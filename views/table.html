@@ -1,0 +1,40 @@
+<p id="/table" class="viewHeading">Table</p>
+<div class="container filterContainer">
+   <div class="row">
+      <div class="col-5 col-sm-5 col-md-3 col-lg-2"><small>Filter by season</small></div>
+   </div>
+   <div class="row filtersRow">
+      <div class="col-4 col-sm-4 col-md-3 col-lg-2">
+         <select ng-model="getSeason">
+            <option ng-selected="2016/17" ng-click="tableData.setSeason('2016/17')">2016/17</option>
+            <option ng-click="tableData.setSeason('2015/16')">2015/16</option>
+         </select>
+      </div>
+   </div>
+</div><!--end filter container-->
+<div class="table-responsive">
+<table class="table" ng-init="tableData.setSeason('2016/17')">
+   <thead>
+      <tr>
+         <th scope="col">#</th>
+         <th scope="col">Team</th>
+         <th scope="col">Played</th>
+         <th scope="col">Won</th>
+         <th scope="col">Draw</th>
+         <th scope="col">Lost</th>
+         <th scope="col">Goals</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr ng-repeat="teamName in tableData.teamNames">
+         <th scope="row">{{$index +1}}</th>
+         <td><img ng-src="images\{{teamName}}.png" class="teamLogo"> {{teamName}}</td>
+         <td>{{tableData.teamTotalPlayed[$index]}}</td>
+         <td>{{tableData.teamWon[$index]}}</td>
+         <td>{{tableData.teamDraw[$index]}}</td>
+         <td>{{tableData.teamLost[$index]}}</td>
+         <td>{{tableData.teamGoals[$index]}}</td>
+      </tr>
+   </tbody>
+</table><!--end table-->
+</div>
